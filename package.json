@@ -1,0 +1,27 @@
+{
+	"name": "@permaweb/gatekeeper",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"description": "Publisher tooling for The Fold Gatekeeper site and address protection lists.",
+	"scripts": {
+		"build": "tsx src/build.ts",
+		"publish": "tsx src/publish.ts",
+		"test": "vitest run",
+		"typecheck": "tsc --noEmit",
+		"validate": "tsx src/validate.ts"
+	},
+	"dependencies": {
+		"arweave": "^1.15.7",
+		"yaml": "^2.8.1"
+	},
+	"devDependencies": {
+		"@types/node": "^24.3.0",
+		"tsx": "^4.20.4",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	},
+	"engines": {
+		"node": ">=20"
+	}
+}
