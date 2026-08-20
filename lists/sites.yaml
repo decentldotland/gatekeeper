@@ -1,3 +1,340 @@
 # Phishing or suspicious sites that The Fold should warn about or block.
 # Domains match the exact hostname and its subdomains.
-[]
+# Seed policy: exact hosts only. Do not block shared hosting roots such as github.io,
+# vercel.app, pages.dev, web.app, netlify.app, ngrok.app, or arweave.net.
+
+- value: dapps-node.com
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic wallet and dapp phishing host.
+  references:
+    - &phantom-blocklist https://github.com/phantom/blocklist/blob/master/blocklist.yaml
+
+- value: walletconnectdapps.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic wallet connection phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: dappintegrate.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic dapp integration phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: easywalletfix.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed wallet recovery or repair phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: walletbridgedapps.com
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed wallet bridge phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: walletbridgeapps.org
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed wallet bridge phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: officialapynode.online
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed fake API or node repair phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: importblocknodes.com
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed fake node import phishing host.
+  references:
+    - *phantom-blocklist
+
+- value: blockunified-app.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host dapp phishing subdomain.
+  references:
+    - *phantom-blocklist
+
+- value: bugrectifier.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host wallet repair phishing subdomain.
+  references:
+    - *phantom-blocklist
+
+- value: coinauth-node.web.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host wallet authentication phishing subdomain.
+  references:
+    - *phantom-blocklist
+
+- value: synchronizing-ledger-devices.vercel.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host Ledger phishing subdomain.
+  references:
+    - *phantom-blocklist
+
+- value: blocknodes-resolve.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host fake node repair phishing subdomain.
+  references:
+    - *phantom-blocklist
+
+- value: walletconnectdapps.com
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic wallet connection phishing host.
+  references:
+    - &metamask-config https://github.com/MetaMask/eth-phishing-detect/blob/main/src/config.json
+
+- value: connectwallet.network
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic wallet connection phishing host.
+  references:
+    - *metamask-config
+
+- value: connect2wallet.org
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed generic wallet connection phishing host.
+  references:
+    - *metamask-config
+
+- value: walletconnect.cloud
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed WalletConnect phishing host.
+  references:
+    - *metamask-config
+
+- value: appwallets--connects.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host wallet connection phishing subdomain.
+  references:
+    - *metamask-config
+
+- value: walletconnect-launchpadprotocol002f.vercel.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host WalletConnect phishing subdomain.
+  references:
+    - *metamask-config
+
+- value: walletconnect-dapp-psi.vercel.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host WalletConnect phishing subdomain.
+  references:
+    - *metamask-config
+
+- value: wallet-connect-b1d.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host WalletConnect phishing subdomain.
+  references:
+    - *metamask-config
+
+- value: hotfix-walletconnect-qr.gmx-interface.pages.dev
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed exact shared-host WalletConnect QR phishing subdomain.
+  references:
+    - *metamask-config
+
+- value: ladgar-com.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: www-ledgar-com.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: ladger-live.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger Live lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: www-ladger-live.app
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger Live lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: ledqar.org
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: ledqar.com
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: app-ledgar.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: app-ladger.in
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Ledger lookalike phishing host.
+  references:
+    - *metamask-config
+
+- value: 72ooq34jcvmzhkxobluntcc4wena3jg7bhtxk4vcofe4xazm54oq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: oox4xdnkvuslorbnruelrmfm3f5fmbkapv4fdwbtqzbr7jhllupq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: jim42rgulve5iqencrmcizwbu5wz2te6svo5ff75ihqamprhhj3q.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: l6ohpkmmetg7yr2ihutvmiqr6kkzcsd3hncmjepexww6qfh5zv2q.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: k7gs5anjh7zcebet2sninbd2d5bufdb5e46bh6jshkj4exgajffq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: stnib7hjnwpjeoeb6j34644unzvldd2lj7qwd465jmrxfl7oekia.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: lxoj4g2ea44nit3hgxufymqsnbioy3dfwwuzocgbqxb4qz6upb4a.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: bh7tlcjemyxom2v5esyesufpspt742krutohz6oqcruyjbnblngq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: g63c4lk3o6dku5vg4uasxmwyzrzjhq2np5glpq6n7gu4mlzu6e2a.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: gbhxw5xlmsfmnwrpmetmhde7pq6dmwizm2plsjgnaxcpch3orqcq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: g6k7isdd2yxw7ip2lcjsk3xccivlzsvupwl2smfzfxk7ohlzcubq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
+
+- value: maniuqhmeabfxlwktdjv4ssm4rz3woyu3j7kwpjuwrlpq2cpyixq.arweave.net
+  match: domain
+  status: block
+  reason: phishing
+  description: Upstream-listed Arweave-hosted phishing site.
+  references:
+    - *metamask-config
