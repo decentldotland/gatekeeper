@@ -2,6 +2,10 @@
 
 Gatekeeper is a publisher repo for The Fold protection lists. contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [The Fold](https://github.com/permaweb/the-fold).
 
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for list scope, evidence requirements, false-positive handling, and validation workflow.
+
 ## Flow
 
 ```text
