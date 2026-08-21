@@ -1,6 +1,6 @@
 # Gatekeeper
 
-Gatekeeper is a publisher repo for The Fold protection lists. Humans maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by The Fold.
+Gatekeeper is a publisher repo for The Fold protection lists. contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [The Fold](https://github.com/permaweb/the-fold).
 
 ## Flow
 
@@ -12,7 +12,7 @@ lists/sites.yaml + lists/addresses.yaml
 -> The Fold fetches gatekeeper-list.v1.json from Arweave
 ```
 
-The Fold should consume the generated JSON artifact only. It should not parse YAML at runtime.
+The Fold should consume the generated JSON artifact only.
 
 ## Commands
 
@@ -24,6 +24,14 @@ npm run publish -- --wallet ./wallet.json
 ```
 
 `publish` writes `dist/latest-publish.json` with the transaction id, SHA-256 digest, timestamp, and source commit.
+
+## Latest Published Artifact
+
+- Transaction ID: `INZO0N2vOuk6JAb3zqV-TZG5kDFlWyCS_xQYapJ9tsY`
+- SHA-256: `586cb85461ec9605b65f57d1c8fcb059e99d5e1aca9baba6902ee30499c24be4`
+- Content-Digest: `sha-256=:WGy4VGHslgW2X1fRyPywWemdXhrKm6umkC7jBJnCS+Q=:`
+- Bytes: `16287`
+- Source commit: `3f167193c0a2ff7634e4f7aff889dd16284d2dcc`
 
 ## List Entries
 
