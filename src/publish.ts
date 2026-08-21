@@ -5,8 +5,12 @@ import type { JWKInterface } from 'arweave/web/lib/wallet.js';
 
 import { buildArtifact } from './build.js';
 import { contentDigest, currentCommit } from './artifact.js';
-import { ARTIFACT_PATH, LATEST_PUBLISH_PATH } from './paths.js';
+import { ARTIFACT_PATH, LATEST_PUBLISH_PATH, PACKAGE_PATH } from './paths.js';
 import type { PublishReceipt } from './types.js';
+
+interface PackageMetadata {
+	version?: string;
+}
 
 interface PublishArgs {
 	walletPath: string;
@@ -49,6 +53,8 @@ function parseArgs(argv: string[]): PublishArgs {
 export async function publishArtifact(args: PublishArgs): Promise<PublishReceipt> {
 	const { sha256 } = await buildArtifact();
 	const artifactJson = await readFile(ARTIFACT_PATH, 'utf8');
+	const packageMetadata = JSON.parse(await readFile(PACKAGE_PATH, 'utf8')) as PackageMetadata;
+	if (!packageMetadata.version) throw new Error('Missing package version.');
 	const wallet = JSON.parse(await readFile(args.walletPath, 'utf8')) as JWKInterface;
 	const arweave = Arweave.init({ host: args.gatewayHost, port: args.gatewayPort, protocol: args.gatewayProtocol });
 	const transaction = await arweave.createTransaction({ data: artifactJson }, wallet);
@@ -57,7 +63,7 @@ export async function publishArtifact(args: PublishArgs): Promise<PublishReceipt
 	transaction.addTag('Content-Type', 'application/json');
 	transaction.addTag('App-Name', 'gatekeeper');
 	transaction.addTag('Protocol', 'gatekeeper');
-	transaction.addTag('Protocol-Version', '1');
+	transaction.addTag('Protocol-Version', packageMetadata.version);
 	transaction.addTag('Gatekeeper-Schema', 'gatekeeper-list/v1');
 	transaction.addTag('Gatekeeper-Commit', commit);
 	transaction.addTag('Content-Digest', digest);

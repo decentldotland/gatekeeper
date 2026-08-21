@@ -55,7 +55,7 @@ The Arweave transaction uses:
 - `Content-Type: application/json`
 - `App-Name: gatekeeper`
 - `Protocol: gatekeeper`
-- `Protocol-Version: 1`
+- `Protocol-Version: <package version>`
 - `Gatekeeper-Schema: gatekeeper-list/v1`
 - `Gatekeeper-Commit: <git commit>`
 - `Content-Digest: sha-256=:<base64>:`

@@ -9,3 +9,4 @@ export const ADDRESSES_PATH = path.join(LISTS_DIR, 'addresses.yaml');
 export const ARTIFACT_PATH = path.join(DIST_DIR, 'gatekeeper-list.v1.json');
 export const DIGEST_PATH = path.join(DIST_DIR, 'gatekeeper-list.v1.sha256');
 export const LATEST_PUBLISH_PATH = path.join(DIST_DIR, 'latest-publish.json');
+export const PACKAGE_PATH = path.join(ROOT_DIR, 'package.json');
