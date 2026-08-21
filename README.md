@@ -31,6 +31,7 @@ npm run publish -- --wallet ./wallet.json
 
 ## Latest Published Artifact
 
+- Trusted publisher: `31URqz6C4jiNgyJo8fZRDDCuO8mSGPigWuO0zf4I5CU`
 - Transaction ID: `INZO0N2vOuk6JAb3zqV-TZG5kDFlWyCS_xQYapJ9tsY`
 - SHA-256: `586cb85461ec9605b65f57d1c8fcb059e99d5e1aca9baba6902ee30499c24be4`
 - Content-Digest: `sha-256=:WGy4VGHslgW2X1fRyPywWemdXhrKm6umkC7jBJnCS+Q=:`
