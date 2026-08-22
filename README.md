@@ -1,6 +1,6 @@
 # Gatekeeper
 
-Gatekeeper is a publisher repo for The Fold protection lists. contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [The Fold](https://github.com/permaweb/the-fold).
+Gatekeeper is a publisher repo for PermawebOS Browser protection lists. contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [the browser](https://github.com/permaweb/PermawebOS-Browser).
 
 ## Contributing
 
@@ -13,10 +13,10 @@ lists/sites.yaml + lists/addresses.yaml
 -> npm run validate
 -> npm run build
 -> npm run publish -- --wallet ./wallet.json
--> The Fold fetches gatekeeper-list.v1.json from Arweave
+-> PermawebOS Browser fetches gatekeeper-list.v1.json from Arweave
 ```
 
-The Fold should consume the generated JSON artifact only.
+PermawebOS Browser should consume the generated JSON artifact only.
 
 ## Commands
 
@@ -43,11 +43,11 @@ npm run publish -- --wallet ./wallet.json
 `sites.yaml` supports exact URLs and domains. Domains match the exact host and subdomains.
 
 ```yaml
-- value: fake-fold.example
+- value: fake-permawebos-browser.example
   match: domain
   status: block
   reason: phishing
-  description: Impersonates The Fold wallet.
+  description: Impersonates a PermawebOS Browser wallet.
   references:
     - https://example.com/report
 ```
