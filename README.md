@@ -30,16 +30,16 @@ npm run publish -- --wallet ./wallet.json
 
 `publish` writes `dist/latest-publish.json` with the transaction id, SHA-256 digest, timestamp, and source commit.
 
-`update:sites` fetches the upstream Phantom and MetaMask phishing feeds already referenced by `lists/sites.yaml`, normalizes wallet-security-relevant missing entries, and appends them to `lists/sites.yaml`. Use `--dry-run` first. Pass `--all` only for a full upstream import, because the MetaMask list is intentionally broad.
+`update:sites` fetches upstream Phantom, MetaMask, and SEAL phishing feeds, normalizes wallet-security-relevant missing entries, and appends them to `lists/sites.yaml`. Use `--dry-run` first. Pass `--all` only for a full upstream import, because the upstream lists are intentionally broad.
 
 ## Latest Published Artifact
 
 - Trusted publisher: `31URqz6C4jiNgyJo8fZRDDCuO8mSGPigWuO0zf4I5CU`
-- Transaction ID: `AusSrHdeKOXczhIolE2D90Lf3lVS3wyqH1kzqd4H3oM`
-- SHA-256: `014d646bda8a005d367583c89cf72dda9b4c7854864e6d1bd9f46191a7b17532`
-- Content-Digest: `sha-256=:AU1ka9qKAF02dYPInPct2ptMeFSGTm0b2fRhkaexdTI=:`
-- Bytes: `585493`
-- Source commit: `4cdb157651a1a5f63dc7e89c0aba1d3fd1e25105`
+- Transaction ID: `BVUq5wlsELwFp_vVOcvvjr1uTgt4Rtk6KEwFmC4XhF4`
+- SHA-256: `bc24be2c97a586c485279309b43e28c67cc06537142add2b662a957844b1c870`
+- Content-Digest: `sha-256=:vCS+LJelhsSFJ5MJtD4oxnzAZTcUKt0rZiqVeESxyHA=:`
+- Bytes: `585858`
+- Source commit: `52a7e09e14caf6162aefa671f3593c4dd8d5911c`
 
 ## List Entries
 

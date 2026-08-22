@@ -8,7 +8,7 @@ import { readSourceLists } from './schema.js';
 import { normalizeDomain, normalizeUrl } from './normalize.js';
 import type { SourceSiteEntry } from './types.js';
 
-type UpstreamSourceId = 'phantom' | 'metamask';
+type UpstreamSourceId = 'phantom' | 'metamask' | 'seal-domains' | 'seal-urls';
 
 interface UpstreamSource {
 	id: UpstreamSourceId;
@@ -75,6 +75,22 @@ export const UPSTREAM_SOURCES: UpstreamSource[] = [
 		descriptionSource: 'MetaMask',
 		parse: parseMetaMaskConfig,
 	},
+	{
+		id: 'seal-domains',
+		name: 'SEAL domain blocklist',
+		fetchUrl: 'https://raw.githubusercontent.com/security-alliance/blocklists/main/domain.txt',
+		referenceUrl: 'https://github.com/security-alliance/blocklists/blob/main/domain.txt',
+		descriptionSource: 'SEAL',
+		parse: parseLineList,
+	},
+	{
+		id: 'seal-urls',
+		name: 'SEAL URL blocklist',
+		fetchUrl: 'https://raw.githubusercontent.com/security-alliance/blocklists/main/url.txt',
+		referenceUrl: 'https://github.com/security-alliance/blocklists/blob/main/url.txt',
+		descriptionSource: 'SEAL',
+		parse: parseLineList,
+	},
 ];
 
 function asStringArray(value: unknown): string[] {
@@ -95,6 +111,13 @@ export function parseMetaMaskConfig(text: string): string[] {
 		throw new Error('MetaMask config must be a JSON object.');
 	}
 	return asStringArray((parsed as { blacklist?: unknown }).blacklist);
+}
+
+export function parseLineList(text: string): string[] {
+	return text
+		.split(/\r?\n/)
+		.map((line) => line.trim())
+		.filter((line) => line.length > 0 && !line.startsWith('#'));
 }
 
 function candidateKey(entry: Pick<SourceSiteEntry, 'match' | 'value'>): string {
@@ -121,6 +144,10 @@ function hasPathLikeSyntax(value: string): boolean {
 	return value.includes('/') || value.includes('?') || value.includes('#');
 }
 
+function isIpv4Address(value: string): boolean {
+	return /^(?:\d{1,3}\.){3}\d{1,3}$/.test(value);
+}
+
 export function siteEntryFromUpstreamValue(value: string): SourceSiteEntry | null {
 	const raw = value.trim();
 	if (!raw) return null;
@@ -131,6 +158,7 @@ export function siteEntryFromUpstreamValue(value: string): SourceSiteEntry | nul
 		if (hasPathLikeSyntax(raw)) {
 			return { value: normalizeUrl(`https://${raw}`), match: 'url', status: 'block', reason: 'phishing' };
 		}
+		if (isIpv4Address(raw)) return null;
 		const domain = normalizeDomain(raw);
 		if (isSharedHostRoot(domain)) return null;
 		return { value: domain, match: 'domain', status: 'block', reason: 'phishing' };

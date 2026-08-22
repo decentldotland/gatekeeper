@@ -12037,3 +12037,12 @@
   description: Upstream-listed wallet phishing site from Phantom.
   references:
     - https://github.com/phantom/blocklist/blob/master/blocklist.yaml
+
+# Added from upstream phishing feeds by npm run update:sites.
+- value: https://arweave.mainnet.irys.xyz/J3SxgwgG2ia-SW0RXn_WsFnvR9i5kbqdvgbS0ns6pis/index.html
+  match: url
+  status: block
+  reason: phishing
+  description: Upstream-listed phishing site from SEAL.
+  references:
+    - https://github.com/security-alliance/blocklists/blob/main/url.txt
