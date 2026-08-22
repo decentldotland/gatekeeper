@@ -115,6 +115,15 @@ npm test
 npm run typecheck
 ```
 
+To refresh phishing site candidates from upstream feeds already used by this repo:
+
+```sh
+npm run update:sites -- --dry-run
+npm run update:sites
+```
+
+The updater appends missing entries only. By default it keeps a wallet-security relevance filter so broad upstream lists do not turn Gatekeeper into a general-purpose internet blocklist. Use `--source phantom`, `--source metamask`, `--keyword <term>`, or `--all` when a maintainer intentionally wants a different batch.
+
 Publishing is maintainer-only unless maintainers explicitly ask you to publish:
 
 ```sh

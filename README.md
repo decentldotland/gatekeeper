@@ -22,6 +22,7 @@ PermawebOS Browser should consume the generated JSON artifact only.
 
 ```sh
 npm run validate
+npm run update:sites -- --dry-run
 npm run build
 npm test
 npm run publish -- --wallet ./wallet.json
@@ -29,14 +30,16 @@ npm run publish -- --wallet ./wallet.json
 
 `publish` writes `dist/latest-publish.json` with the transaction id, SHA-256 digest, timestamp, and source commit.
 
+`update:sites` fetches the upstream Phantom and MetaMask phishing feeds already referenced by `lists/sites.yaml`, normalizes wallet-security-relevant missing entries, and appends them to `lists/sites.yaml`. Use `--dry-run` first. Pass `--all` only for a full upstream import, because the MetaMask list is intentionally broad.
+
 ## Latest Published Artifact
 
 - Trusted publisher: `31URqz6C4jiNgyJo8fZRDDCuO8mSGPigWuO0zf4I5CU`
-- Transaction ID: `INZO0N2vOuk6JAb3zqV-TZG5kDFlWyCS_xQYapJ9tsY`
-- SHA-256: `586cb85461ec9605b65f57d1c8fcb059e99d5e1aca9baba6902ee30499c24be4`
-- Content-Digest: `sha-256=:WGy4VGHslgW2X1fRyPywWemdXhrKm6umkC7jBJnCS+Q=:`
-- Bytes: `16287`
-- Source commit: `3f167193c0a2ff7634e4f7aff889dd16284d2dcc`
+- Transaction ID: `AusSrHdeKOXczhIolE2D90Lf3lVS3wyqH1kzqd4H3oM`
+- SHA-256: `014d646bda8a005d367583c89cf72dda9b4c7854864e6d1bd9f46191a7b17532`
+- Content-Digest: `sha-256=:AU1ka9qKAF02dYPInPct2ptMeFSGTm0b2fRhkaexdTI=:`
+- Bytes: `585493`
+- Source commit: `4cdb157651a1a5f63dc7e89c0aba1d3fd1e25105`
 
 ## List Entries
 

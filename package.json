@@ -5,11 +5,12 @@
 	"type": "module",
 	"description": "Publisher tooling for The Fold Gatekeeper site and address protection lists.",
 	"scripts": {
-		"build": "tsx src/build.ts",
-		"publish": "tsx src/publish.ts",
+		"build": "node --import tsx src/build.ts",
+		"publish": "node --import tsx src/publish.ts",
 		"test": "vitest run",
 		"typecheck": "tsc --noEmit",
-		"validate": "tsx src/validate.ts"
+		"update:sites": "node --import tsx src/updateSites.ts",
+		"validate": "node --import tsx src/validate.ts"
 	},
 	"dependencies": {
 		"arweave": "^1.15.7",
