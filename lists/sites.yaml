@@ -1,4 +1,4 @@
-# Phishing or suspicious sites that The Fold should warn about or block.
+# Phishing or suspicious sites that PermawebOS Browser should warn about or block.
 # Domains match the exact hostname and its subdomains.
 # Seed policy: exact hosts only. Do not block shared hosting roots such as github.io,
 # vercel.app, pages.dev, web.app, netlify.app, ngrok.app, or arweave.net.

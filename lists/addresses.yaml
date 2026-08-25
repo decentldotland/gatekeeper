@@ -1,4 +1,4 @@
-# Risky Arweave addresses or process ids that The Fold should warn about or block.
+# Risky Arweave addresses or process ids that PermawebOS Browser should warn about or block.
 # Seed policy: warn on process, authority, and selected exchange custody destinations.
 - value: 0syT13r0s0tgPmIed95bJnuSqaD29HQNN8D3ElLSrsc
   status: warn
@@ -17,24 +17,24 @@
 - value: rq2ow0JlGPBtKcWMDcaVmgkmE5fzrTkZSzYnBkFflPE
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.
 
 - value: _m4ftvKoEnbB7toHVBkuZWXYRK0j1mmgyHsug2ayffY
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.
 
 - value: 6BszMaAjlcu8vz-XcX7XHOgyBpEUzsxdVHVrb2xiQIc
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.
 
 - value: YgALvL4sTAr7gAnfswuSrltdx3HZS6Q_BCJVM-OI6RU
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.
 
 - value: 3XXo7KEXx7E09db0OhwdwPuvYxtP7TxyonLcinIret0
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.

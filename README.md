@@ -1,6 +1,8 @@
 # Gatekeeper
 
-Gatekeeper is a publisher repo for PermawebOS Browser protection lists. contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [the browser](https://github.com/permaweb/PermawebOS-Browser).
+Gatekeeper is a community-run publisher repository for PermawebOS Browser protection lists. Contributors maintain YAML source files for phishing sites and risky Arweave addresses. The tooling validates and normalizes those files into a deterministic JSON artifact that can be published to Arweave and consumed by [the browser](https://github.com/permaweb/PermawebOS-Browser).
+
+> Gatekeeper Trusted Publisher is one example of a community-generated list. It is not affiliated with the official PermawebOS Browser build and should not be considered an official Gatekeeper list, because PermawebOS Browser does not enforce any list.
 
 ## Contributing
 

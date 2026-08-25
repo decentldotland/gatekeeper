@@ -1,6 +1,6 @@
 # Gatekeeper Contributor Guide
 
-Gatekeeper maintains The Fold protection lists for phishing sites and risky/sink Arweave destinations. The source of truth is the YAML in `lists/`; the published artifact is deterministic JSON that wallets can fetch from Arweave.
+Gatekeeper maintains PermawebOS Browser protection lists for phishing sites and risky/sink Arweave destinations. The source of truth is the YAML in `lists/`; the published artifact is deterministic JSON that wallets can fetch from Arweave.
 
 This guide is inspired by the public-review model used by phishing-list projects such as MetaMask's `eth-phishing-detect`: keep entries precise, include evidence, avoid broad blocks, and treat false positives as urgent.
 
@@ -10,7 +10,7 @@ Gatekeeper accepts entries that protect users from clear wallet-security risk:
 
 - Phishing sites, wallet-drainer sites, fake support or recovery pages, and malicious dapps.
 - Arweave addresses or AO process ids where direct transfers are likely to lose funds or expose the user to known abuse.
-- Exchange hot wallets where direct wallet transfers should warn the user because deposit-credit handling is external to The Fold.
+- Exchange hot wallets where direct wallet transfers should warn the user because deposit-credit handling is external to the wallet.
 
 Gatekeeper is not a general moderation list, reputation database, sanctions list, or personal-dispute registry. Do not add people, projects, or services just because they are controversial, low-quality, or risky in a broad investment sense.
 
@@ -19,7 +19,7 @@ Gatekeeper is not a general moderation list, reputation database, sanctions list
 - `lists/sites.yaml` contains site protections.
 - `lists/addresses.yaml` contains Arweave address and process protections.
 - `src/` contains validation, normalization, artifact generation, and publishing code.
-- `dist/gatekeeper-list.v1.json` is the generated artifact consumed by The Fold.
+- `dist/gatekeeper-list.v1.json` is the generated artifact consumed by PermawebOS Browser.
 - `dist/latest-publish.json` records the last Arweave publish receipt.
 
 Only edit `lists/*.yaml` for normal list changes. Regenerate `dist/` with the project commands.
@@ -29,11 +29,11 @@ Only edit `lists/*.yaml` for normal list changes. Regenerate `dist/` with the pr
 Site entries use this shape:
 
 ```yaml
-- value: fake-fold.example
+- value: fake-permawebos-browser.example
   match: domain
   status: block
   reason: phishing
-  description: Impersonates The Fold wallet and prompts users to connect or recover keys.
+  description: Impersonates a PermawebOS Browser wallet and prompts users to connect or recover keys.
   references:
     - https://example.com/report
 ```
@@ -44,7 +44,7 @@ Address entries use this shape:
 - value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
   status: warn
   reason: cex-hotwallet
-  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside The Fold.
+  description: Exchange hot wallet; warn before direct transfer because custody and deposit-credit handling are outside the wallet.
   references:
     - https://example.com/evidence
 ```

@@ -1,9 +1,9 @@
 {
-	"name": "@permaweb/gatekeeper",
-	"version": "0.1.1",
+	"name": "gatekeeper",
+	"version": "0.1.2",
 	"private": true,
 	"type": "module",
-	"description": "Publisher tooling for The Fold Gatekeeper site and address protection lists.",
+	"description": "Community publisher tooling for PermawebOS Browser Gatekeeper site and address protection lists.",
 	"scripts": {
 		"build": "node --import tsx src/build.ts",
 		"publish": "node --import tsx src/publish.ts",
