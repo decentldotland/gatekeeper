@@ -37,11 +37,11 @@ npm run publish -- --wallet ./wallet.json
 ## Latest Published Artifact
 
 - Trusted publisher: `31URqz6C4jiNgyJo8fZRDDCuO8mSGPigWuO0zf4I5CU`
-- Transaction ID: `BVUq5wlsELwFp_vVOcvvjr1uTgt4Rtk6KEwFmC4XhF4`
-- SHA-256: `bc24be2c97a586c485279309b43e28c67cc06537142add2b662a957844b1c870`
-- Content-Digest: `sha-256=:vCS+LJelhsSFJ5MJtD4oxnzAZTcUKt0rZiqVeESxyHA=:`
-- Bytes: `585858`
-- Source commit: `52a7e09e14caf6162aefa671f3593c4dd8d5911c`
+- Transaction ID: `wyZ54NQkJCVpMWiFtLTn-oz8bn4sJI6UvCdMqURtLjo`
+- SHA-256: `b82c07fc3229fcb8d938670b3449fc122c6ecc580dd7c420719d7567c6c32bba`
+- Content-Digest: `sha-256=:uCwH/DIp/LjZOGcLNEn8EixuzFgN18QgcZ11Z8bDK7o=:`
+- Bytes: `585868`
+- Source commit: `a6f79f4dd603372cfdd9860c06e2cb3d58523c5d`
 
 ## List Entries
 
